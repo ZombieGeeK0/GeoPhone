@@ -22,7 +22,7 @@
 
 - Registrarse en [Numverify](https://numverify.com/) y en [OpenCageData](https://opencagedata.com/).
 - Obtener las APIKeys.
-- Escribirlas en orden correspondiente en el archivo [config.json]().
+- Escribirlas en orden correspondiente en el archivo [config.json](https://github.com/ZombieGeeK0/GeoPhone/blob/main/config.json).
 
 <hr>
 
