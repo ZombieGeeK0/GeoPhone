@@ -4,6 +4,8 @@
 
 `[+]` Está probado en `Kali Linux,` y la nueva versión incorporará un ejecutable para `Windows.`
 
+`[+]` Fuente `utilizada:` [Calvin S](https://patorjk.com/software/taag/#p=display&f=Calvin%20S&t=GeoPhone).
+
 <hr>
 
 | Sistema operativo  | Soporte |
@@ -32,23 +34,37 @@
 
     sudo apt update -y && sudo apt upgrade -y && git clone https://github.com/ZombieGeeK0/GeoPhone && cd GeoPhone && chmod +x install.sh && chmod 777 install.sh && sudo bash install.sh
 
+<hr>
 
-funcionamiento explicacion
+## 🏁 FUNCIONAMIENTO 🏁
 
-retocar mi readme de github
+`[+]` Se importan las `librerías:`
 
+```python
+import os, opencage, phonenumbers, json, requests, random, time, sys
+from opencage.geocoder import OpenCageGeocode
+from phonenumbers import geocoder
+from googlesearch import search
+from colorama import Fore, Back
+```
 
-fuente Calvin S
+`[+]` Se definen los `dominios:`
 
-def clear():
-  if os.name == "nt":
-    os.system("cls")
-  else:
-    os.system("clear")
+```python
+dom = ["com","com.tw","co.in","be","de","co.uk","co.ma","dz","ru","ca"]
+```
 
+`[+]` Hacemos el setup de `OpenCage:`
 
-hacer logo para social preview
-
+```python
+geo = OpenCageGeocode(configuracion_dat['OpencageKey'])
+phone = phonenumbers.parse(numero)
+location = geocoder.description_for_number(phone, 'en')
+query = str(location)
+results = geo.geocode(query)
+lat = results[0]['geometry']['lat']
+lng = results[0]['geometry']['lng']
+```
 
 ## 🥇 CREDITS 🥇
 
