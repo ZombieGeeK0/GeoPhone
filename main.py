@@ -1,13 +1,16 @@
-import os, opencage, phonenumbers, json, requests, random, time
+# ------------------------------------- Librerías ---------------------------------- # 
+import os, opencage, phonenumbers, json, requests, random, time, sys
 from opencage.geocoder import OpenCageGeocode
 from phonenumbers import geocoder
 from googlesearch import search
 from colorama import Fore, Back
 
+# ------------------------------------- Colores ---------------------------------- # 
 class color:
   RED = Fore.RED + Back.RESET
   RESET = Fore.RESET + Back.RESET
 
+# ------------------------------------- Logo ---------------------------------- # 
 def logo():
   os.system('clear')
   title = '''
@@ -15,23 +18,21 @@ def logo():
 ║ ╦├┤ │ │╠═╝├─┤│ ││││├┤ 
 ╚═╝└─┘└─┘╩  ┴ ┴└─┘┘└┘└─┘
 '''
-    print(color.RED + title)
+    print(color.RED + title + '\n')
 
-
-
+# ------------------------------------- Configuración Json ---------------------------------- # 
 with open('config.json', 'r') as configuracion:
   configuracion_dat = json.load(configuracion)
 
-
-
-  
-def menu():
-  clear()
-  print(logo)
+# ------------------------------------- Función principal ---------------------------------- # 
+def main():
+  os.system('clear')
+  logo()
+  # ------------------------------------- Dominios ---------------------------------- # 
   dom = ["com","com.tw","co.in","be","de","co.uk","co.ma","dz","ru","ca"]
-  numero = input(f'{Fore.BLUE}[~] Ingresa un numero telefonico: ')
+  numero = input(f'{color.RED}[+] Ingresa un numero telefonico: ')
   time.sleep(2)
-  # ---- NumVerify ----- #
+  # ------------------------------------- NumVerify ---------------------------------- # 
   api = f"https://api.apilayer.com/number_verification/validate?number={numero}"
   try:
     key = configuracion_dat['Numverifykey']
@@ -40,15 +41,18 @@ def menu():
     }
     payload = {}
     lol = requests.request("GET", api, headers=apikey, data = payload).json()
+    
     if lol['valid'] == False:
-       print(f'{Fore.RED}\n[!] El numero no es valido!')
-       exit()
+       print(f'{Fore.RED}\n[!] El numero no es valido')
+       sys.exit()
+      
     else:
-      print('\n[~] Numero: ', lol['number'])
-      print('[~] Codigo del pais: ', lol['country_code'])
-      print('[~] Nombre del pais: ', lol['country_name'])
-      print('[~] Ubicacion: ', lol['location'])
-      print('[~] Transportador: ', lol['carrier'])
+      print('\n[+] Numero: ', lol['number'])
+      print('[+] Codigo del pais: ', lol['country_code'])
+      print('[+] Nombre del pais: ', lol['country_name'])
+      print('[+] Ubicacion: ', lol['location'])
+      print('[+] Transportador: ', lol['carrier'])
+      
   except KeyError:
      print(f'{Fore.RED}\n[!] A ocurrido un error.')
   # --- Opencage --- #
@@ -86,4 +90,5 @@ def menu():
     print(f'\nResultados encontrados!: {c}')
 
 
-menu()
+# ------------------------------------- Ejecución ---------------------------------- # 
+main()
