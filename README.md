@@ -16,8 +16,20 @@
 
 <hr>
 
+## 🔴 CONFIGURACIÓN 🔴
 
-poner a euron en creditos
+`[+]` Obtención de las `APIKeys:`
+
+- Registrarse en [Numverify](https://numverify.com/) y en [OpenCageData](https://opencagedata.com/).
+- Obtener las APIKeys.
+- Escribirlas en orden correspondiente en el archivo [config.json]().
+
+<hr>
+
+
+funcionamiento explicacion
+
+retocar mi readme de github
 
 
 fuente Calvin S
@@ -28,12 +40,24 @@ def clear():
   else:
     os.system("clear")
 
-poner donde hay que registrarse para las api keys
 
 hacer logo para social preview
 
-https://numverify.com/
 
-https://opencagedata.com/
+## 🥇 CREDITS 🥇
 
-Despues de tener las apikeys es necesario colocarlas en el archivo config.json En orden cada una.
+- [ZombieGeek0](https://www.github.com/ZombieGeek0): El proyecto [GeoPhone](https://www.github.com/ZombieGeek0/GeoPhone).
+- [Euronymou5](https://www.github.com/Euronymou5): Por el proyecto [Dark-Hydro](https://www.github.com/Euronymou5/Dark-Hydro).
+
+<hr>
+
+PONER IMAGEN
+
+<hr>
+
+`[ 📬 ]` Contacta conmigo a través de `Discord` mandando una invitación a `qwfkr.`
+
+    qwfkr
+`[ 📬 ]` Si lo prefieres, mándame un correo a `3xpl017.contact@proton.me.`
+
+    3xpl017.contact@proton.me.
