@@ -25,17 +25,6 @@ function install() {
    echo -e "\033[32m\n[~] Instalando pip3..."
    sudo apt install python3-pip -y
    fi
-
-   sleep 3
-   which git > /dev/null 2>&1
-   if [ "$?" -eq "0" ]; then
-   echo -e "\033[32m\n[~] Git ya esta instalado."
-   else
-   echo -e "\033[32m\n[!] Git no esta instalado."
-   sleep 2
-   echo -e "\033[32m\n[~] Instalando git..."
-   sudo apt install git -y
-   fi
    
    echo -e "\033[32m\n[~] Instalando requerimientos..."
    pip3 install -r requirements.txt
