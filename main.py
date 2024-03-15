@@ -1,18 +1,14 @@
-# Dark-Hydro by: Euronymou5
-# https://github.com/Euronymou5
-# https://twitter.com/Euronymou51
-
-import os
-import opencage
+import os, opencage, phonenumbers, json, requests, random, time
 from opencage.geocoder import OpenCageGeocode
-import phonenumbers
-import json
 from phonenumbers import geocoder
-import requests
 from googlesearch import search
-import random
-import time
-from colorama import Fore
+from colorama import Fore, Back
+
+def main():
+  os.system('clear')
+
+
+
 
 logo = f"""{Fore.MAGENTA}
 ██████   █████  ██████  ██   ██       ██   ██ ██    ██ ██████  ██████   ██████  
