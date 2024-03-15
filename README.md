@@ -8,8 +8,11 @@
 
 | Sistema operativo  | Soporte |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Linux (Debian)  | ✅ |
+| Windows  | :x: |
+| Android | :x: |
+| MacOS | :x: |
+| Apple IOS | :x: |
 
 <hr>
 
