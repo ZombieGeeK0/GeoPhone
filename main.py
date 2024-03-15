@@ -18,7 +18,7 @@ def logo():
 ║ ╦├┤ │ │╠═╝├─┤│ ││││├┤ 
 ╚═╝└─┘└─┘╩  ┴ ┴└─┘┘└┘└─┘
 '''
-    print(color.RED + title + '\n')
+  print(color.RED + title + '\n')
 
 # ------------------------------------- Configuración Json ---------------------------------- # 
 with open('config.json', 'r') as configuracion:
@@ -48,14 +48,14 @@ def main():
        sys.exit()
       
     else:
-      print('{color.RED}\n[+] Numero: ', lol['number'])
-      print('{color.RED}[+] Codigo del pais: ', lol['country_code'])
-      print('{color.RED}[+] Nombre del pais: ', lol['country_name'])
-      print('{color.RED}[+] Ubicacion: ', lol['location'])
-      print('{color.RED}[+] Transportador: ', lol['carrier'])
+      print(f'{color.RED}\n[+] Numero: ', lol['number'])
+      print(f'{color.RED}[+] Codigo del pais: ', lol['country_code'])
+      print(f'{color.RED}[+] Nombre del pais: ', lol['country_name'])
+      print(f'{color.RED}[+] Ubicacion: ', lol['location'])
+      print(f'{color.RED}[+] Transportador: ', lol['carrier'])
       
   except KeyError:
-     print(f'{color.RED}\n[+] ha ocurrido un error')
+     print(f'{color.RED}\n[+] Ha ocurrido un error')
     
   # ------------------------------------- Opencage ---------------------------------- # 
   geo = OpenCageGeocode(configuracion_dat['OpencageKey'])
