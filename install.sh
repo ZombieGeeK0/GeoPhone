@@ -28,6 +28,7 @@ function install() {
    
    echo -e "\033[32m\n[~] Instalando requerimientos..."
    pip3 install -r requirements.txt
+   echo -e "\033[32m\n[~] Utiliza el comando python3 main.py para inciar el programa."
 }
 
 install
