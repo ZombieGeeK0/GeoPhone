@@ -54,8 +54,9 @@ def main():
       print('[+] Transportador: ', lol['carrier'])
       
   except KeyError:
-     print(f'{Fore.RED}\n[!] A ocurrido un error.')
-  # --- Opencage --- #
+     print(f'{Fore.RED}\n[+] ha ocurrido un error')
+    
+  # ------------------------------------- Opencage ---------------------------------- # 
   geo = OpenCageGeocode(configuracion_dat['OpencageKey'])
   phone = phonenumbers.parse(numero)
   location = geocoder.description_for_number(phone, 'en')
@@ -63,12 +64,12 @@ def main():
   results = geo.geocode(query)
   lat = results[0]['geometry']['lat']
   lng = results[0]['geometry']['lng']
-  # --- Phonenumbers --- #
-  print(f'\n[~] Municipio: {location}')
-  print(f'[~] Latitud: {lat}')
-  print(f'[~] Longitud: {lng}')
-  # --- Dorking --- #
-  print('\n[~] Realizando busqueda con dorking...')
+  # ------------------------------------- Phonenumber ---------------------------------- # 
+  print(f'\n[+] Municipio: {location}')
+  print(f'[+] Latitud: {lat}')
+  print(f'[+] Longitud: {lng}')
+  # ------------------------------------- Dorking ---------------------------------- # 
+  print('\n[+] Realizando busqueda con dorking...')
   time.sleep(2)
   tld = random.choice(dom)
   command = f'intext:{numero}'
@@ -76,19 +77,23 @@ def main():
   command3 = f"site:facebook.com intext:{numero}"
   command4 = f"site:twitter.com intext:{numero}"
   command5 = f"site:instagram.com intext:{numero}"
+  # ------------------------------------- Resultados ---------------------------------- # 
   for j in search(command, tld, num=10, stop=10, pause=2):
-    print(f'{Fore.GREEN}\nResultados encontrados!: {j}')
-  print('\n[~] Buscando numero telefonico en archivos pdf...')
+    print(f'{color.RED}\n[+]Resultados encontrados: {j}')
+  print('\n[+] Buscando número telefonico en archivos pdf...')
+
   for i in search(command2, tld, num=10, stop=10, pause=2):
-    print(f'\nResultados encontrados!: {i}')
-  print('\n[~] Buscando numero telefonico en redes sociales..')
+    print(f'\n[+]Resultados encontrados: {i}')
+  print('\n[+] Buscando numero telefonico en redes sociales..')
+
   for a in search(command3, tld, num=10, stop=10, pause=2):
-    print(f'\nResultados encontrados!: {a}')
+    print(f'\n[+]Resultados encontrados: {a}')
+    
   for b in search(command4, tld, num=10, stop=10, pause=2):
-    print(f'\nResultados encontrados!: {b}')
+    print(f'\n[+]Resultados encontrados: {b}')
+    
   for c in search(command5, tld, num=10, stop=10, pause=2):
-    print(f'\nResultados encontrados!: {c}')
-
-
+    print(f'\n[+]Resultados encontrados: {c}')
+    
 # ------------------------------------- Ejecución ---------------------------------- # 
 main()
