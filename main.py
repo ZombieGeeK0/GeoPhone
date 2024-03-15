@@ -8,7 +8,7 @@ class color:
   RED = Fore.RED + Back.RESET
   RESET = Fore.RESET + Back.RESET
 
-def main():
+def logo():
   os.system('clear')
   title = '''
 ╔═╗┌─┐┌─┐╔═╗┬ ┬┌─┐┌┐┌┌─┐
