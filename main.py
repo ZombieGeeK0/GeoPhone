@@ -4,28 +4,25 @@ from phonenumbers import geocoder
 from googlesearch import search
 from colorama import Fore, Back
 
+class color:
+  RED = Fore.RED + Back.RESET
+  RESET = Fore.RESET + Back.RESET
+
 def main():
   os.system('clear')
+  title = '''
+╔═╗┌─┐┌─┐╔═╗┬ ┬┌─┐┌┐┌┌─┐
+║ ╦├┤ │ │╠═╝├─┤│ ││││├┤ 
+╚═╝└─┘└─┘╩  ┴ ┴└─┘┘└┘└─┘
+'''
+    print(color.RED + title)
 
 
-
-
-logo = f"""{Fore.MAGENTA}
-██████   █████  ██████  ██   ██       ██   ██ ██    ██ ██████  ██████   ██████  
-██   ██ ██   ██ ██   ██ ██  ██        ██   ██  ██  ██  ██   ██ ██   ██ ██    ██ 
-██   ██ ███████ ██████  █████   █████ ███████   ████   ██   ██ ██████  ██    ██ 
-██   ██ ██   ██ ██   ██ ██  ██        ██   ██    ██    ██   ██ ██   ██ ██    ██ 
-██████  ██   ██ ██   ██ ██   ██       ██   ██    ██    ██████  ██   ██  ██████ 
-"""
 
 with open('config.json', 'r') as configuracion:
   configuracion_dat = json.load(configuracion)
 
-def clear():
-  if os.name == "nt":
-    os.system("cls")
-  else:
-    os.system("clear")
+
 
   
 def menu():
