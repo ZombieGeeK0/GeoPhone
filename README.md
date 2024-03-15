@@ -25,7 +25,7 @@
 - Registrarse en [Numverify](https://numverify.com/), en [OpenCageData](https://opencagedata.com/) y en [GoogleMapsDeveloppers](https://developers.google.com/maps/documentation/geocoding/get-api-key).
 - Obtener las APIKeys.
 - Escribirlas en orden correspondiente en el archivo [config.json](https://github.com/ZombieGeeK0/GeoPhone/blob/main/config.json).
-- En el caso de la APIKey de GoogleMaps, hay que escribirla directamente en el código del archivo [main]() en la línea ``.
+- En el caso de la APIKey de GoogleMaps, hay que escribirla directamente en el código del archivo [main.py](https://github.com/ZombieGeeK0/GeoPhone/blob/main/main.py) en la línea `104`.
 
 <hr>
 
