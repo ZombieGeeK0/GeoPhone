@@ -9,3 +9,5 @@ def clear():
     os.system("cls")
   else:
     os.system("clear")
+
+poner donde hay que registrarse para las api keys
