@@ -5,7 +5,7 @@ from phonenumbers import geocoder
 from googlesearch import search
 from colorama import Fore, Back
 
-# ------------------------------------- Colores ---------------------------------- # 
+# ------------------------------------- Colores ---------------------------------- # color.RED
 class color:
   RED = Fore.RED + Back.RESET
   RESET = Fore.RESET + Back.RESET
@@ -43,18 +43,18 @@ def main():
     lol = requests.request("GET", api, headers=apikey, data = payload).json()
     
     if lol['valid'] == False:
-       print(f'{Fore.RED}\n[!] El numero no es valido')
+       print(f'{color.RED}\n[!] El numero no es valido')
        sys.exit()
       
     else:
-      print('\n[+] Numero: ', lol['number'])
-      print('[+] Codigo del pais: ', lol['country_code'])
-      print('[+] Nombre del pais: ', lol['country_name'])
-      print('[+] Ubicacion: ', lol['location'])
-      print('[+] Transportador: ', lol['carrier'])
+      print('{color.RED}\n[+] Numero: ', lol['number'])
+      print('{color.RED}[+] Codigo del pais: ', lol['country_code'])
+      print('{color.RED}[+] Nombre del pais: ', lol['country_name'])
+      print('{color.RED}[+] Ubicacion: ', lol['location'])
+      print('{color.RED}[+] Transportador: ', lol['carrier'])
       
   except KeyError:
-     print(f'{Fore.RED}\n[+] ha ocurrido un error')
+     print(f'{color.RED}\n[+] ha ocurrido un error')
     
   # ------------------------------------- Opencage ---------------------------------- # 
   geo = OpenCageGeocode(configuracion_dat['OpencageKey'])
@@ -80,20 +80,20 @@ def main():
   # ------------------------------------- Resultados ---------------------------------- # 
   for j in search(command, tld, num=10, stop=10, pause=2):
     print(f'{color.RED}\n[+]Resultados encontrados: {j}')
-  print('\n[+] Buscando número telefonico en archivos pdf...')
+  print('{color.RED}\n[+] Buscando número telefonico en archivos pdf...')
 
   for i in search(command2, tld, num=10, stop=10, pause=2):
-    print(f'\n[+]Resultados encontrados: {i}')
-  print('\n[+] Buscando numero telefonico en redes sociales..')
+    print(f'{color.RED}\n[+]Resultados encontrados: {i}')
+  print('{color.RED}\n[+] Buscando numero telefonico en redes sociales..')
 
   for a in search(command3, tld, num=10, stop=10, pause=2):
-    print(f'\n[+]Resultados encontrados: {a}')
+    print(f'{color.RED}\n[+]Resultados encontrados: {a}')
     
   for b in search(command4, tld, num=10, stop=10, pause=2):
-    print(f'\n[+]Resultados encontrados: {b}')
+    print(f'{color.RED}\n[+]Resultados encontrados: {b}')
     
   for c in search(command5, tld, num=10, stop=10, pause=2):
-    print(f'\n[+]Resultados encontrados: {c}')
+    print(f'{color.RED}\n[+]Resultados encontrados: {c}')
     
 # ------------------------------------- Ejecución ---------------------------------- # 
 main()
