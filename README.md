@@ -26,6 +26,12 @@
 
 <hr>
 
+`[+]` Instalación en `Linux (Debian):`
+
+`[+]` Ejecutar el siguiente `comando:`
+
+    sudo apt update -y && sudo apt upgrade -y && git clone https://github.com/ZombieGeeK0/GeoPhone && cd GeoPhone && chmod +x install.sh && chmod 777 install.sh && sudo bash install.sh
+
 
 funcionamiento explicacion
 
