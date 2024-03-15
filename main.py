@@ -31,6 +31,7 @@ def main():
   # ------------------------------------- Dominios ---------------------------------- # 
   dom = ["com","com.tw","co.in","be","de","co.uk","co.ma","dz","ru","ca"]
   numero = input(f'{color.RED}[+] Ingresa un numero telefonico: ')
+  ip = input(f'{color.RED}[+] Ingresa una IP: ')
   time.sleep(2)
   # ------------------------------------- NumVerify ---------------------------------- # 
   api = f"https://api.apilayer.com/number_verification/validate?number={numero}"
@@ -94,6 +95,18 @@ def main():
     
   for c in search(command5, tld, num=10, stop=10, pause=2):
     print(f'{color.RED}\n[+]Resultados encontrados: {c}')
+
+  # ------------------------------------- GeoIP ---------------------------------- # 
+  datos = {
+    "considerIp": f"{ip}"
+  }
+
+  url = 'https://www.googleapis.com/geolocation/v1/geolocate?key=YOUR_API_KEY'
+  response = requests.post(url, json=datos) 
+
+  print('\n{color.RED}[+] Latitud: ' + str(response.json()['location']['lat']))
+  print('\n{color.RED}[+] Longitud: ' + str(response.json()['location']['lng']))
+  print('\n{color.RED}[+] Precisión: ' + str(response.json()['accuracy']))
     
 # ------------------------------------- Ejecución ---------------------------------- # 
 main()
