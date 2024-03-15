@@ -11,3 +11,5 @@ def clear():
     os.system("clear")
 
 poner donde hay que registrarse para las api keys
+
+hacer logo para social preview
